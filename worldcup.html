@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>이상형월드컵</title>
+	<meta charset="utf-8">
+	<style>
+		img{
+			width: 500px;
+			height: 500px;
+		}
+
+	</style>
+</head>
+<body>
+	<center>
+	<h1>이상형 월드컵</h1>
+	<p id="cal"></p>
+	<img id="image" onclick="change(0)">
+	<img id="images" onclick="change(1)">
+	<script>
+		text ="";
+		var images=[];
+		var sImages = [];
+
+		// var image=[];
+		// var image1=[];
+		// var result=[];
+		// var result1=[];
+		// var result2=[];
+		var cnt=0;
+		var num=0;
+		var sNum = 0;
+		var cnt2=0;
+
+		// var num1=0;
+		// var num2=0;
+		// var num3=0;
+
+		function show(){
+
+			for(i=0; i<16; i++)
+			{
+				images[i]= (i+1)+".jpg";
+			}
+			images.sort(function(a,b){return 0.5- Math.random()});
+			showImg(num);
+		}
+
+		show(0);
+
+		function showImg(num){
+			document.getElementById('image').src=images[num];
+			document.getElementById('images').src=images[num+1];
+			cnt2++;
+		}
+
+		function change(n){
+			if(cnt2<20)
+			{
+				cnt++;
+				if(n == 0)
+					sImages[sNum++] = images[num];
+				else
+					sImages[sNum++] = images[num+1];
+				num+=2;
+
+				showImg(num);
+
+				if(cnt == images.length/2){
+					for(i=0; i<sImages.length; i++){
+						images[i] = sImages[i];
+						sImages[i] = null;
+					}
+					images.splice(cnt);
+					cnt = 0;
+					num = 0;
+					sNum = 0;
+					showImg(num);
+				}
+			}
+
+
+			// if(cnt<=8)
+			// {
+			// 	num+=2;
+			// 	result = image.concat(image1);
+			// 	show(num);
+			// 	alert(result);
+			// }
+			// else if(cnt<=12)
+			// {
+			// 	for(j=0; j<result.length; j++)
+			// 	{
+			// 		document.getElementById('image').src=result[num2];
+			// 		document.getElementById('images').src=result[num2+1];
+			// 	}
+			// 	num2+=2;
+			// 	result1[num3++] = result[num2];
+			// 	alert(result1);
+			// }
+			// else if(cnt<=14)
+			// {
+			// 	document.getElementById('image').src=result1[num2];
+			// 	document.getElementById('images').src=result1[num2+1];
+			// 	num2+=2;
+			// 	result2[num3++]=result1[num2];
+			// 	alert();
+			// }
+			// else
+			// {
+			// 	document.getElementById('image').src=result;
+			// }
+
+		}
+
+		// function round(){
+		// 	for(j=0 j<result.length; j++)
+		// 	{
+		// 		document.getElementById('image').src=result[cnt];
+		// 		document.getElementById('images').src=result[cnt+1];
+		// 	}
+		// }
+
+		// round();
+
+
+
+		// function save(){
+		// 	document.getElementById('image').src=result[num];
+		// 	document.getElementById('images').src=result[num+1];
+		// }
+
+		document.getElementById('cal').innerHTML=text;
+	</script>
+	</center>
+</body>
+</html>
