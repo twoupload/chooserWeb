@@ -122,6 +122,17 @@ h1 {
     font-family: Raleway;
     margin-top: 120px;
 }
-.hide{
-    display: none;
+
+#wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
+
+#context {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+

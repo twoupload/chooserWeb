@@ -32,80 +32,14 @@
    <div class="container1">
         <h3>WorldCup</h3><br>
     </div>
-   <center>
-   <p id="cal"></p>
-   <img id="image1" style = "opacity: 1;" onclick="change(0)">
-   <img id="image2" style = "opacity: 1;" onclick="change(1)">
-   </center>
-   <script>
-      text ="";
-      var images=[]; // 원래 넣는 배열
-   var indices=[];
-      var sIndices=[];
-   var gameRound = 16;
-   var num=0;
-      var cnt=0;
-
-      function shuffle(){ // 배열을 섞는다.
-      if (gameRound >= 4) {
-         // 배열을 랜덤으로 섞음
-         indices.sort(function(a,b){return 0.5- Math.random()});
-
-         // 몇 강?
-         text = gameRound + "강!";
-      } else if (gameRound >= 2){
-         text = "결승!!!";
-		 indices.sort(function(a,b){return 0.5- Math.random()});
-      } else {
-         text = "최종 우승!!!";
-      }
-      for(i=0; i < gameRound; i++) {
-         images[i]= indices[i]+".jpg"; // 배열을 넣는다.
-      }
-      document.getElementById('cal').innerHTML=text;
-      }
-
-      function showImg(num){ // 사진을 보여줌.
-      if(images.length == 1){
-         document.getElementById('image2').style.display='none';
-      } else {
-         document.getElementById('image2').src=images[num+1];
-         // id images를 배열의 +1로 대체
-      }
-      document.getElementById('image1').src=images[num];
-      // id image를 배열로 대체
-      }
-
-   function init() {
-      for(i=0; i < gameRound; i++) {
-         indices[i] = i + 1;
-      }
-      shuffle();
-      showImg(0);
-   }
-
-      function change(n){
-      sIndices[num] = indices[cnt + n];
-      num++;
-      cnt += 2;
-
-      if (cnt >= gameRound) {
-         indices = sIndices;
-         sIndices = [];
-         images = [];
-         num = 0;
-         cnt = 0;
-         gameRound /= 2;
-         shuffle();
-         showImg(0);
-      } else {
-         showImg(cnt);
-      }
-      }
-
-      init();
-   </script>
+   <div id="wrap">
+      <center id="context">
+      <p id="cal"></p>
+      <img id="image1" style = "opacity: 1;" >
+      <img id="image2" style = "opacity: 1;" >
+      </center>
+   </div>
+  
    <script src="func.js"></script>
-   <script src="move.css"></script>
 </body>
 </html>
