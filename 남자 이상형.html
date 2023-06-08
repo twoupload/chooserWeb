@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,6 +7,27 @@
       img{
          width: 500px;
          height: 500px;
+      }
+      .image-container{
+         position: relative;
+         width: 500px;
+         height: 500px;
+      }
+      .image-container img {
+         width: 100%;
+         height: 100%;
+
+      }
+      .image-text {
+         position:absolute;
+         bottom: 0;
+         left: 0;
+         width: 100%;
+         padding: 10px;
+         background-color: rgba(0, 0, 0, 0.5);
+         color: white;
+         font-size: 18px;
+         text-align: center;
       }
       body{
          background-color: #1e1a3e;
@@ -34,12 +54,19 @@
     </div>
    <center>
    <p id="cal"></p>
-   <img id="image1" style = "opacity: 1;" onclick="change(0)">
-   <img id="image2" style = "opacity: 1;" onclick="change(1)">
+   <div class="image-container">
+      <img id="image1" onclick="change(0)">
+      <div id="text1" class="image-text"></div>
+   </div>
+   <div class="image-container">
+      <img id="image2" onclick="change(1)">
+      <div id="text2" class="image-text"></div>
+   </div>
    </center>
    <script>
       text ="";
       var images=[]; // 원래 넣는 배열
+      var texts = [];
    var indices=[];
       var sIndices=[];
    var gameRound = 16;
@@ -61,20 +88,63 @@
       }
       for(i=0; i < gameRound; i++) {
          images[i]= indices[i]+".jpg"; // 배열을 넣는다.
+         texts[i] = getPersonName(indices[i]);
       }
       document.getElementById('cal').innerHTML=text;
       }
+      function getPersonName(index) {
+         switch (index) {
+            case 1:
+               return "차은우";
+            case 2:
+               return "서강준";
+            case 3:
+               return "박성훈";
+            case 4:
+               return "비오";
+            case 5:
+               return "송중기";
+            case 6:
+               return "우도환";
+            case 7:
+               return "박효신";
+            case 8:
+               return "박보검";
+            case 9:
+               return "김우빈";
+            case 10:
+               return "정국";
+            case 11:
+               return "뷔";
+            case 12:
+               return "GD";
+            case 13:
+               return "마동석";
+            case 14:
+               return "이동욱";
+            case 15:
+               return "현빈";
+            case 16:
+               return "손석구"; 
+            default:
+               return "";
+         }
+      }
 
-      function showImg(num){ // 사진을 보여줌.
-      if(images.length == 1){
-         document.getElementById('image2').style.display='none';
-      } else {
-         document.getElementById('image2').src=images[num+1];
-         // id images를 배열의 +1로 대체
+      function showImg(num) {
+         document.getElementById("image1").src = images[num];
+         document.getElementById("text1").innerHTML = texts[num];
+         if (images.length > 1) {
+            document.getElementById("image2").src = images[num + 1];
+            document.getElementById("text2").innerHTML = texts[num + 1];
+            
+         } else {
+            document.getElementById('image2').style.display='none';
+            document.getElementById('text2').style.display='none';
+         }
       }
-      document.getElementById('image1').src=images[num];
-      // id image를 배열로 대체
-      }
+
+    
 
    function init() {
       for(i=0; i < gameRound; i++) {
@@ -93,6 +163,7 @@
          indices = sIndices;
          sIndices = [];
          images = [];
+         texts = [];
          num = 0;
          cnt = 0;
          gameRound /= 2;
