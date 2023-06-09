@@ -12,7 +12,7 @@ body {
     height: 20vh;
     color: white;
     text-align: center;
-    margin-top: -1.11%;
+    margin-top: 0%;
 }
 .container2{
     display: flex;
@@ -38,29 +38,27 @@ h1 {
 }
 .start_button {
     display: inline-block;
-    padding: 10px 10px 10px 10px;
-    background-color: #fff;
-    color: blue;
-    text-decoration: none;
+    background-color: #1e1a3e;
+    color: #fff;
+    padding: 12px 24px;
     font-size: 18px;
+    border: none;
     border-radius: 4px;
-    width: 180px;
-    height: 30px;
-    margin-top: -100px;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 .start_button:hover {
-    background-color: #f2f2f2;
-    color: blue;
+    background-color: #3f376f;
 }
 .box {
-    padding: 20px 350px;
+    padding: 30px 390px;
 }
 .pull {
     position:relative; 
-    margin: 50px; 
+    margin: 60px; 
     padding: 20px; 
-    width:130px; 
-    height:40px; 
+    width:100px; 
+    height:33px; 
     color: #FFF; 
     border-radius: 10px; 
     background-color: tomato;
@@ -69,10 +67,10 @@ h1 {
     content:""; 
     position: absolute; 
     top: 21px; 
-    right: -30px; 
-    border-left: 60px solid tomato; 
+    right: -35px; 
+    border-left: 70px solid tomato; 
     border-top: 40px solid transparent; 
-    border-bottom: 10px solid transparent;
+    border-bottom:5px solid transparent;
 }
 .svg-wrapper {
     margin-top: 0;
@@ -122,17 +120,3 @@ h1 {
     font-family: Raleway;
     margin-top: 120px;
 }
-
-#wrap {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
-
-#context {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
