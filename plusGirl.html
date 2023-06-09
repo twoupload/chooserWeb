@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<style>
+        body {
+            background-color: #1e1a3e;
+        }
+
+        #image-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .image-row {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+
+        .grid-image {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            margin: 5px;
+            perspective: 1000px; 
+            position: relative;
+            cursor: help; /*pointer;*/
+            border-radius: 20px;
+        }
+
+        .grid-image:hover {
+            transform-style: preserve-3d;
+            transform: rotateY(180deg); 
+            transition: transform 0.5s ease; 
+        }
+
+        .grid-image img {
+            backface-visibility: hidden; 
+        }
+
+        .page-title {
+            position: absolute; 
+            top: 50%; 
+            left: 50%; 
+            transform: translate(-50%, -50%); 
+            font-size: 25px; 
+            color: lightcyan; 
+        }
+
+	</style>
+</head>
+<body>
+    <div id="image-container">
+        <div class="image-row">
+            <a href="https://www.instagram.com/dlwlrma/" target="_blank">
+                <img src="1.jpg" class="grid-image">
+            </a>
+            <a href="https://www.instagram.com/skuukzky/" target="_blank">
+                <img src="2.jpg" class="grid-image">
+            </a>
+            <a href="https://www.instagram.com/ohvely22/" target="_blank">
+                <img src="3.jpg" class="grid-image">
+            </a>
+            <a href="https://www.instagram.com/dahee0315/" target="_blank">
+                <img src="4.jpg" class="grid-image">
+            </a>
+        </div>
+        <div class="image-row">
+            <a href="https://www.instagram.com/roma.emo/" target="_blank">
+                <img src="5.jpg" class="grid-image">
+            </a>
+            <a href="https://www.instagram.com/goyounjung/" target="_blank">
+                <img src="6.jpg" class="grid-image">
+            </a>
+            <a href="https://www.instagram.com/geewonii/" target="_blank">
+                <img src="7.jpg" class="grid-image">
+            </a>
+            <a href="https://www.instagram.com/rohyoonseo/" target="_blank">
+                <img src="8.jpg" class="grid-image">
+            </a>
+        </div>
+        <div class="image-row">
+            <a href="https://www.instagram.com/shinseulkee/" target="_blank">
+                <img src="9.jpg" class="grid-image">
+            </a>
+            <a href="https://www.instagram.com/jennierubyjane/" target="_blank">
+                <img src="10.jpg" class="grid-image">
+            </a>
+            <a href="https://www.instagram.com/newjeans_official/" target="_blank">
+                <img src="11.jpg" class="grid-image">
+            </a>
+            <a href="https://www.instagram.com/heybiblee/" target="_blank">
+                <img src="12.jpg" class="grid-image">
+            </a>
+        </div>
+        <div class="image-row">
+            <a href="https://www.instagram.com/xeesoxee/" target="_blank">
+                <img src="13.jpg" class="grid-image">
+            </a>
+            <a href="https://www.instagram.com/jeehyun._/" target="_blank">
+                <img src="14.jpg" class="grid-image">
+            </a>
+            <a href="https://www.instagram.com/_yujin_an/" target="_blank">
+                <img src="15.jpg" class="grid-image">
+            </a>
+            <a href="https://www.instagram.com/2ruka__/" target="_blank">
+                <img src="16.jpg" class="grid-image">
+            </a>
+        </div>
+    </div>
+
+    <h1 class="page-title">이미지를 클릭해주세요.</h1>
+
+</body>
+</html>
