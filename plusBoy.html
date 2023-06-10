@@ -6,8 +6,12 @@
 	<style>
         body {
             background-color: #1e1a3e;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 120vh;
         }
-
         #image-container {
             display: flex;
             flex-wrap: wrap;
@@ -28,7 +32,7 @@
             perspective: 1000px; 
             position: relative;
             cursor: help; /*pointer;*/
-            border-radius: 20px;
+            border-radius: 60px;
         }
 
         .grid-image:hover {
@@ -48,6 +52,20 @@
             transform: translate(-50%, -50%); 
             font-size: 25px; 
             color: lightcyan; 
+        }
+        .GameButton {
+            display: inline-block;
+            padding: 15px 20px;
+            margin-top: 10px;
+            background-color: #4169E1;
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .GameButton:hover {
+            background-color: #191970;
         }
 
 	</style>
@@ -113,6 +131,10 @@
     </div>
 
     <h1 class="page-title">이미지를 클릭해주세요.</h1>
+
+    <a href="https://kr.vonvon.me/" class="GameButton">다른 게임 하러 가기</a>
+
+
 
 </body>
 </html>
