@@ -10,7 +10,6 @@ var gameRound = 16;
 var num=0;
 var cnt=0;
 
-
 document.getElementById("resetButton").addEventListener("click", function() {
     var destination = "gender.html";
     window.location.href = destination;
@@ -86,12 +85,12 @@ function shuffle()
         indices.sort(function(a,b){return 0.5- Math.random()});
 
         // 몇 강?
-        text = gameRound + "강";
+        text = gameRound + "강 ❕❕ ";
     } else if (gameRound >= 2){
-        text = "결승 🏁";
+        text = "🏁 결승 🏁";
     indices.sort(function(a,b){return 0.5- Math.random()});
     } else {
-        text = "최종 우승 🙌🏻";
+        text = "🙌🏻 최종 우승 🙌🏻";
     }
     for(i=0; i < gameRound; i++) {
         images[i]= indices[i]+".jpg"; // 배열을 넣는다.
@@ -212,4 +211,4 @@ setTimeout(function() {
     restartTimer(); // Restart the timer when clicking on a picture
     change(1);
 }, 2000);
-});
+}); 
