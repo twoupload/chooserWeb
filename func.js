@@ -158,7 +158,7 @@ var remainingTime = 30; // Initial timer value
 
 function startTimer() {
 progressBar.style.width = "100%"; // Initialize the progress bar
-remainingTime = 6; // Set the initial timer value
+remainingTime = 8; // Set the initial timer value
 timer = setInterval(function() {
     if (remainingTime > 0) {
     remainingTime--; // Decrease remaining time by 1 second
