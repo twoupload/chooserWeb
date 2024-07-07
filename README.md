@@ -1,1 +1,2 @@
-# SW_project
+# SW_project 웹 사이트 제작
+이상형 월드컵 만들기 프로젝트
